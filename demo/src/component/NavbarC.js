@@ -2,9 +2,10 @@ import React from 'react'
 import  Navbar   from 'react-bootstrap/Navbar';
 import { Container, NavDropdown, Nav } from 'react-bootstrap';
 import PropTypes from 'prop-types'
-
+import { Link, Route, NavLink  } from "react-router-dom";
+ 
 export default function NavbarC(props) {
-  
+
   return (
     <>
       <Navbar bg="light" expand="lg">
@@ -13,7 +14,14 @@ export default function NavbarC(props) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-              <Nav.Link href="#home">{ props.aboutText}</Nav.Link>
+              <Nav.Link>
+                  <NavLink
+            to="about"
+           
+          >
+             {props.aboutText}
+          </NavLink>
+               </Nav.Link>
             <Nav.Link href="#link">Link</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
